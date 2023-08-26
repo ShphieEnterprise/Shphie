@@ -1,0 +1,7 @@
+__pycache__/*
+*/__pycache__/*
+*.history/*
+*.vscode/*
+*log
+.DS_Store
+vars.json
