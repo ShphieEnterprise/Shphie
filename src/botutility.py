@@ -4,7 +4,6 @@ import re
 from typing import Any, Optional, Tuple, Union
 
 from discord import Guild, Interaction, Member, Message, TextChannel, User, Webhook, utils
-from pykakasi import kakasi
 
 
 class BotUtility:
@@ -12,12 +11,6 @@ class BotUtility:
         super().__init__(*args, **kwargs)
 
         self.EMOJI_PATTERN: str = r"<:[0-9|a-z|_]+:[0-9]+>"  # Regex custom emoji
-
-        kks = kakasi()
-        kks.setMode("H", "a")
-        kks.setMode("K", "a")
-        kks.setMode("J", "a")
-        self.kksconv = kks.getConverter()
 
     async def convert_orgmsg(
         self, orgmsg: Union[Interaction, Message]
@@ -60,8 +53,7 @@ class BotUtility:
         if key in os.environ:  # Heroku
             return os.environ[key]
         else:  # Local
-            path: str = f'{os.environ["HOME"]}/Dropbox/discord/data/vars.json'
-            # path: str = f'{os.environ["HOME"]}/environment/BaseCamp/src/discord-bot/src/vars.json'
+            path: str = os.path.join(os.path.dirname(__file__), "../vars.json")
             with open(path) as f:
                 vars: dict[str, str] = json.load(f)
 
