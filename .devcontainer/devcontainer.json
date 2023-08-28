@@ -21,14 +21,19 @@
                 "extensions.ignoreRecommendations": true,
                 "python.formatting.provider": "none",
                 "[python]": {
-                  "editor.formatOnSave": true,
-                  "editor.defaultFormatter": "ms-python.black-formatter"
-                }
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                },
+                "isort.args": ["--profile","black"]
             },
             "extensions": [
                 "ms-python.python",
                 "ms-python.black-formatter",
-                "editorconfig.editorconfig"
+                "editorconfig.editorconfig",
+                "ms-python.isort"
             ]
         }
     },

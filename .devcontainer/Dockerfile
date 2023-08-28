@@ -16,5 +16,4 @@ RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
 RUN pip install --no-cache-dir \
-    flake8 \
-    isort
+    flake8
