@@ -1,34 +1,36 @@
 {
-  "name": "devcontainer-Sophie",
-  "dockerFile": "Dockerfile",
-  "containerEnv": {
-    "TZ": "Asia/Tokyo"
-  },
-  "runArgs": [
-    "--init"
-  ],
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "python.linting.enabled": true,
-        "python.linting.lintOnSave": true,
-        "python.linting.pylintEnabled": false,
-        "python.linting.flake8Enabled": true,
-        "python.linting.flake8Args": [
-          "--config=${workspaceFolder}/.flake8"
-        ],
-        "extensions.ignoreRecommendations": true,
-        "python.formatting.provider": "none",
-        "[python]": {
-          "editor.formatOnSave": true,
-          "editor.defaultFormatter": "ms-python.black-formatter"
-        },
-      },
-      "extensions": [
-        "ms-python.python",
-        "ms-python.black-formatter"
-      ]
-    }
-  },
-  "postCreateCommand": "pip install -r requirements.txt"
+    "name": "devcontainer-Sophie",
+    "dockerFile": "Dockerfile",
+    "shutdownAction": "stopContainer",
+    "containerEnv": {
+        "TZ": "Asia/Tokyo"
+    },
+    "runArgs": [
+        "--init"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.linting.enabled": true,
+                "python.linting.lintOnSave": true,
+                "python.linting.pylintEnabled": false,
+                "python.linting.flake8Enabled": true,
+                "python.linting.flake8Args": [
+                  "--config=${workspaceFolder}/.flake8"
+                ],
+                "extensions.ignoreRecommendations": true,
+                "python.formatting.provider": "none",
+                "[python]": {
+                  "editor.formatOnSave": true,
+                  "editor.defaultFormatter": "ms-python.black-formatter"
+                }
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "editorconfig.editorconfig"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt"
 }
