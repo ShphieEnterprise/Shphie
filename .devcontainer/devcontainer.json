@@ -16,7 +16,7 @@
                 "python.linting.pylintEnabled": false,
                 "python.linting.flake8Enabled": true,
                 "python.linting.flake8Args": [
-                  "--config=${workspaceFolder}/.flake8"
+                    "--config=${workspaceFolder}/.flake8"
                 ],
                 "extensions.ignoreRecommendations": true,
                 "python.formatting.provider": "none",
