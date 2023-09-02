@@ -1,0 +1,42 @@
+{
+    "name": "devcontainer-Sophie",
+    "dockerFile": "Dockerfile",
+    "shutdownAction": "stopContainer",
+    "containerEnv": {
+        "TZ": "Asia/Tokyo"
+    },
+    "runArgs": [
+        "--init"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.linting.enabled": true,
+                "python.linting.lintOnSave": true,
+                "python.linting.pylintEnabled": false,
+                "python.linting.flake8Enabled": true,
+                "python.linting.flake8Args": [
+                    "--config=${workspaceFolder}/.flake8"
+                ],
+                "extensions.ignoreRecommendations": true,
+                "python.formatting.provider": "none",
+                "[python]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                },
+                "isort.args": ["--profile","black"]
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "editorconfig.editorconfig",
+                "ms-python.isort"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "remoteUser": "devuser"
+}
